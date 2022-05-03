@@ -17,6 +17,10 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 
+app.get('/', (res, req) => {
+    res.send('Hello to the Hotel API');
+});
+
 //route middleware
 readdirSync('./routes').map((r) => app.use('/api', require(`./routes/${r}`)))
 

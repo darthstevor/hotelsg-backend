@@ -2,6 +2,7 @@ import express from 'express';
 import { readdirSync } from 'fs';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 const morgan = require("morgan");
 require('dotenv').config();
 
@@ -17,7 +18,7 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.get('/', (res, req) => {
+app.get('/', (req, res) => {
     res.send('Hello to the Hotel API');
 });
 
